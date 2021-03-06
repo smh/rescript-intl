@@ -32,7 +32,7 @@ testAll(
     ("zh-TW", `€1,000.00`),
   },
   ((locale, expected)) => {
-    Currency.make(~value=1000., ~currency=Some("EUR"), ~locale=Some(locale), ())
+    Currency.make(~value=1000., ~currency="EUR", ~locale=Some(locale), ())
     |> expect
     |> toEqual(expected)
   },
@@ -44,7 +44,7 @@ describe("Swedish", () => {
   })
 
   test("base for SEK", () => {
-    Currency.make(~value=1000., ~currency=Some("SEK"), ~locale=Some("sv-SE"), ())
+    Currency.make(~value=1000., ~currency="SEK", ~locale=Some("sv-SE"), ())
     |> expect
     |> toEqual(`1\xA0000,00\xA0kr`)
   })

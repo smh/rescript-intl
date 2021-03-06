@@ -36,13 +36,13 @@ module Currency = {
     ~locale=None,
     ~minimumFractionDigits=Some(2),
     ~maximumFractionDigits=Some(2),
-    ~currency=None,
+    ~currency,
     (),
   ) => {
     locale
     ->numberFormat({
       style: Style.make(Some(#currency)),
-      currency: currency,
+      currency: Some(currency),
       maximumFractionDigits: maximumFractionDigits,
       minimumFractionDigits: minimumFractionDigits,
     })
